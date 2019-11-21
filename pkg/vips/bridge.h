@@ -73,6 +73,8 @@ int invert_image(VipsImage *in, VipsImage **out);
 int composite(VipsImage **in, VipsImage **out, int n, int mode);
 int label(VipsImage *in, VipsImage **out, LabelOptions *o);
 
+int vips_image_get_n_pages(VipsImage *in);
+
 void gobject_set_property(VipsObject* object, const char* name, const GValue* value);
 
 static int has_alpha_channel(VipsImage *image) {

@@ -161,6 +161,10 @@ int add(VipsImage *left, VipsImage *right, VipsImage **out) {
 	return vips_add(left, right, out, NULL);
 }
 
+int vips_image_get_n_pages(VipsImage *in){
+	return vips_image_get_n_pages(in);
+}
+
 int multiply(VipsImage *left, VipsImage *right, VipsImage **out) {
 	return vips_multiply(left, right, out, NULL);
 }
@@ -300,3 +304,4 @@ int label(VipsImage *in, VipsImage **out, LabelOptions *o) {
 	g_object_unref(base);
 	return 0;
 }
+

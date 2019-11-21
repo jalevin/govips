@@ -339,6 +339,10 @@ func vipsAdd(left *C.VipsImage, right *C.VipsImage) (*C.VipsImage, error) {
 	return output, nil
 }
 
+func vipsGetNPages(image *C.VipsImage) int {
+	return int(C.vips_image_get_n_pages(image))
+}
+
 func vipsMultiply(left *C.VipsImage, right *C.VipsImage) (*C.VipsImage, error) {
 	incOpCounter("multiply")
 	defer C.g_object_unref(C.gpointer(left))
