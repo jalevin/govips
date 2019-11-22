@@ -17,7 +17,6 @@ import (
 type ImageRef struct {
 	image  *C.VipsImage
 	format ImageType
-
 	// NOTE(d): We keep a reference to this so that the input buffer is
 	// never garbage collected during processing. Some image loaders use random
 	// access transcoding and therefore need the original buffer to be in memory.
@@ -25,6 +24,11 @@ type ImageRef struct {
 }
 
 type LoadOption func(o *vipsLoadOptions)
+
+// GetNPages gets number of pages in an image
+func (ref *ImageRef) GetNPages() int {
+	return vipsGetNPages(ref.image)
+}
 
 func WithAccessMode(a Access) LoadOption {
 	return func(o *vipsLoadOptions) {

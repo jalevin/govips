@@ -1,6 +1,10 @@
 
 #include "bridge.h"
 
+int vips_image_get_n_pages(VipsImage *in){
+	return vips_image_get_n_pages(in);
+}
+
 int is_16bit(VipsInterpretation interpretation) {
 	return interpretation == VIPS_INTERPRETATION_RGB16 || interpretation == VIPS_INTERPRETATION_GREY16;
 }
@@ -159,10 +163,6 @@ int composite(VipsImage **in, VipsImage **out, int n, int mode) {
 
 int add(VipsImage *left, VipsImage *right, VipsImage **out) {
 	return vips_add(left, right, out, NULL);
-}
-
-int vips_image_get_n_pages(VipsImage *in){
-	return vips_image_get_n_pages(in);
 }
 
 int multiply(VipsImage *left, VipsImage *right, VipsImage **out) {

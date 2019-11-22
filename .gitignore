@@ -2,3 +2,5 @@
 build/
 *.failed.*
 .vscode
+go.mod
+go.sum
