@@ -40,6 +40,9 @@ typedef struct {
 int init_image(void *buf, size_t len, int imageType, ImageLoadOptions *o, VipsImage **out);
 int find_image_type_loader(int t);
 int find_image_type_saver(int t);
+int vips_image_get_n_pages(VipsImage *in);
+
+
 
 int save_jpeg_buffer(VipsImage* image, void **buf, size_t *len, int strip, int quality, int interlace);
 int save_png_buffer(VipsImage *in, void **buf, size_t *len, int strip, int compression, int quality, int interlace);
@@ -72,8 +75,6 @@ int gaussian_blur(VipsImage *in, VipsImage **out, double sigma);
 int invert_image(VipsImage *in, VipsImage **out);
 int composite(VipsImage **in, VipsImage **out, int n, int mode);
 int label(VipsImage *in, VipsImage **out, LabelOptions *o);
-
-int vips_image_get_n_pages(VipsImage *in);
 
 void gobject_set_property(VipsObject* object, const char* name, const GValue* value);
 

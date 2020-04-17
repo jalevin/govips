@@ -340,6 +340,7 @@ func vipsAdd(left *C.VipsImage, right *C.VipsImage) (*C.VipsImage, error) {
 }
 
 func vipsGetNPages(image *C.VipsImage) int {
+	fmt.Println(C.vips_image_get_n_pages(image))
 	return int(C.vips_image_get_n_pages(image))
 }
 
